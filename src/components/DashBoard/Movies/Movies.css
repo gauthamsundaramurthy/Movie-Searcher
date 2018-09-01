@@ -79,14 +79,13 @@
   overflow: scroll;
 }
 
-@media only screen and (max-width: 400px ) {
-  .search-area {
-    width: 90%;
-    flex: 0 0 20px;
-    margin: 30px 0px 10px 0px;
-    border-bottom: 1px solid #d9d9d9;
-    background-color: #f2f2f2;
-    border:1px solid red;
-    display:flex;
-  }
+/* no movies */
+.no-movies {
+  width: 400px;
+  height: 300px;
+  text-align:center;
+  font-family: muli-bold;
+  font-size: 17px;
+  color: #91919C;
+  background-color: #f2f2f2; 
 }

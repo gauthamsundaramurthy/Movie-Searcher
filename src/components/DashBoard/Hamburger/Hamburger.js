@@ -1,33 +1,22 @@
 import React from 'react'
 import './Hamburger.css'
 
+/* This component is only for mobile app */
+
 class Hamburger extends React.Component {
   constructor () {
     super()
-    this.updateCurrentCategory = this.updateCurrentCategory.bind(this)
-    this.state = {
-      category: 'All',
-      categoryList: ['Name', 'Year', 'Rating', 'Language', 'Country']
-    }
+    this.toggleSidePanel = this.toggleSidePanel.bind(this)
   }
-  updateCurrentCategory (e) {
-    this.props.sendCurrentCategory(e.target.id)
-    this.setState({
-      category: e.target.value
-    })
+
+  toggleSidePanel () {
+    this.props.toggleSidePanel(!this.props.showSidePanel)
   }
   render () {
-    let renderCategories = this.state.categoryList.map(category => {
-      if (this.props.category === category) {
-        return <div className='category active' id={category} onClick={this.updateCurrentCategory} > {category} </div>
-      } else {
-        return <div className='category' id={category} onClick={this.updateCurrentCategory} > {category} </div>
-      }})
-      
     return (
       <div className='mobile-app-header'>
         <div className='app-name'> Movie Searcher</div>
-        <div className='hamburger-menu'>
+        <div className='hamburger-menu' onClick={this.toggleSidePanel}>
           <div className='hamburger-line' />
           <div className='hamburger-line' />
           <div className='hamburger-line' />

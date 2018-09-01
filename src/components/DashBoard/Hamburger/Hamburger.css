@@ -1,5 +1,10 @@
 .mobile-app-header {
+  position: relative;
+  top:0px;
   width: 100%;
+  margin: 0px;
+  z-index:4;
+  background-color: #ffffff;
 }
 
 /* hamburger menu */

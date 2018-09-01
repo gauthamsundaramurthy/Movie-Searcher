@@ -17,7 +17,13 @@ class Movies extends React.Component {
   }
 
   componentDidMount () {
-    fetch(config.moviesEndPoint)
+    fetch(config.moviesEndPoint, {
+      mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json/'
+      }
+    })
       .then(response => response.json())
       .then(movieList => this.setState({showMovies: movieList, moviesList: movieList}))
   }
@@ -32,66 +38,70 @@ class Movies extends React.Component {
     
     /* Initially category set to 'All' which loads entire movie list */
     /* Once user clicks category, based on the category movies are been displayed */
-    
-
     if (this.props.category === 'All') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         showMovies.push(movie)
         this.setState({
           showMovies: showMovies
         })
+        return showMovies
       }
       )
     } else if (this.props.category === 'Name') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         if (movie.movie_title.trim().toLowerCase() === userInput.trim().toLowerCase()) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
           })
         }
+        return this.state.moviesList
       })
     } else if (this.props.category === 'Country') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         if (movie.country.trim().toLowerCase() === userInput.trim().toLowerCase()) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
           })
         }
+        return this.state.moviesList
       })
     } else if (this.props.category === 'Language') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         if (movie.language.trim().toLowerCase() === userInput.trim().toLowerCase()) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
           })
         }
+        return this.state.moviesList
       })
     } else if (this.props.category === 'Year') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         if (movie.title_year.trim().toLowerCase() === userInput.trim().toLowerCase()) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
           })
         }
+        return this.state.moviesList
       })
     } else if (this.props.category === 'Rating') {
-      return this.state.moviesList.map((movie) => {
+      this.state.moviesList.map((movie) => {
         if (movie.content_rating.trim().toLowerCase() === userInput.trim().toLowerCase()) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
           })
         }
+        return this.state.moviesList
       })
     }
   }
 
   render () {
-    let showMovies = this.state.showMovies.map(movie => <Movie movieInfo={movie} />)
+    let showMovies = this.state.showMovies.length <= 0 ? <div className='no-movies'> No movies to show</div> : this.state.showMovies.map((movie,index) => <Movie key={index} movieInfo={movie} />)
     return (
       /* Display area */
       <div className='display-container'>

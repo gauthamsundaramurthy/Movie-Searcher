@@ -54,8 +54,7 @@
   font-size: 13px;
   letter-spacing: 0.1px;
   color: #24233A; 
-  margin: 20px 0px 15px 15px;
-  
+  margin: 20px 0px 15px 15px;  
 }
 
 .categories > .categories-list {
@@ -83,8 +82,34 @@
   background-color: #14C5DF;
 }
 
+.hide {
+  display: none;
+}
+
+/* for mobile apps */
+
 @media only screen and (max-width: 400px) {
   .sidepanel-container {
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    background-color:white;
+    z-index:3;
+  }
+
+  .user-profile {
     display: none;
   }
+
+  .categories {
+    margin-top: 50px;
+  }
+
+  .categories-list > .category {
+    width: 90%;
+    flex: 0 0 25px;
+    padding: 9px 0px 0px 15px;
+  }
+
 }
