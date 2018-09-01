@@ -1,0 +1,90 @@
+.sidepanel-container {
+  flex: 0 0 15.625em;
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #f2f2f2;  
+}
+
+/* user profile */
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom:2px solid #f2f2f2;
+}
+
+.user-profile > .title {
+  font-family: 'muli-bold';
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  margin: 25px 0px 15px 0px;
+  color: #24233A;
+}
+
+.user-profile > .photo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #E2E2E2;
+}
+
+.user-profile > .name {
+  font-family: 'muli-regular';
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  margin: 5px 0px 15px 0px;
+  color: #24233A;
+}
+
+/* categories */
+
+.categories {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+}
+
+.categories > .title {
+  font-family: 'muli-semi-bold';
+  font-size: 13px;
+  letter-spacing: 0.1px;
+  color: #24233A; 
+  margin: 20px 0px 15px 15px;
+  
+}
+
+.categories > .categories-list {
+  width: 100%;
+  flex: 0 0 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.categories-list > .category {
+  width: 100%;
+  flex: 0 0 25px;
+  padding: 9px 0px 0px 15px;
+  font-family: 'muli-regular';
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #24233A; 
+}
+
+.category:hover {
+  background-color: #F5F5F7;
+}
+
+.active {
+  background-color: #14C5DF;
+}
+
+@media only screen and (max-width: 400px) {
+  .sidepanel-container {
+    display: none;
+  }
+}

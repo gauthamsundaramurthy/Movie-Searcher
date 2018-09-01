@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "muli-bold";
+	src: url("./assets/fonts/Muli/Muli-Bold.ttf");
+}
+
+@font-face {
+	font-family: "muli-regular";
+	src: url("./assets/fonts/Muli/Muli-Regular.ttf");
+}
+
+@font-face {
+    font-family: "muli-semi-bold";
+    src: url("./assets/fonts/Muli/Muli-SemiBold.ttf")
+}
+
+@font-face {
+    font-family : "muli-extra-bold";
+    src: url("./assets/fonts/Muli/Muli-ExtraBold.ttf")
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    border:none;
+}
