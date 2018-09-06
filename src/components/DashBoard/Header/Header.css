@@ -1,0 +1,42 @@
+.mobile-app-header {
+  position: relative;
+  top:0px;
+  width: 100%;
+  margin: 0px;
+  z-index:4;
+  background-color: #ffffff;
+}
+
+.mobile-app-component .app-name {
+  text-align: center;
+  font-family: 'muli-bold';
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  margin: 15px 0px 15px 0px;
+  color: #24233A;
+}
+  
+.mobile-app-component > .header-container {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-container > .category {
+  flex: 0 0 60px;
+  height: 30px;
+  margin: 5px;
+  text-align: center;
+  padding-top: 7px;
+  font-family: 'muli-semi-bold';
+  font-size: 15px;
+  color: #24233A;
+}
+
+/* Hide mobile-app header in Desktop view */
+
+@media only screen and (min-width: 700px) {
+  .mobile-app-component {
+    display:none;
+  }
+}

@@ -112,7 +112,6 @@ class Movies extends React.Component {
       default: placeholderText = 'Search movies'
     }
     return (
-      /* Display area */
       <div className='display-container'>
         <div className='search-area'>
           <img src={searchIcon} className='search-icon' alt='search-icon' />

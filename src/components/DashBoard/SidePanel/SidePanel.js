@@ -2,29 +2,18 @@ import React from 'react'
 import './SidePanel.css'
 import userPhoto from '../../../assets/images/profile.jpeg'
 
+/* This component is for screens greater than 700 px */
+
 class SidePanel extends React.Component {
   constructor () {
     super()
     this.updateCurrentCategory = this.updateCurrentCategory.bind(this)
     this.state = {
-      sidePanelCss: 'sidepanel-container',
-      category: 'All',
-      categoryList: ['Name', 'Year', 'Rating', 'Language', 'Country']
+      categoryList: ['All', 'Name', 'Year', 'Rating', 'Language', 'Country']
     }
   }
   updateCurrentCategory (e) {
     this.props.setCategory(e.target.id)
-    this.setState({
-      category: e.target.value
-    })
-   
-    /* once user clicks a category in mobile app, side Panel should go away */
-    this.props.showSidePanel ? this.setState({sidePanelCss: 'sidepanel-container'}) : (this.setState({sidePanelCss: 'hide'}), this.props.toggleSidePanel(!this.props.showSidePanel))
-  }
-  componentWillReceiveProps (nextProps) {
-    if (this.props.showSidePanel !== nextProps.showSidePanel) {
-      this.props.showSidePanel ? this.setState({sidePanelCss: 'sidepanel-container'}) : this.setState({sidePanelCss: 'hide'})
-    }
   }
   render () {
     let renderCategories = this.state.categoryList.map((category) => {
@@ -32,9 +21,10 @@ class SidePanel extends React.Component {
         return <div className='category active' key={category} id={category} onClick={this.updateCurrentCategory} > {category} </div>
       } else {
         return <div className='category' key={category} id={category} onClick={this.updateCurrentCategory} > {category} </div>
-      }})
+      }
+    })
     return (
-      <div className={this.state.sidePanelCss}>
+      <div className='sidepanel-container'>
         <div className='user-profile'>
           <div className='title'> Movie Searcher </div>
           <img src={userPhoto} className='photo' alt='user-profile-pic' />

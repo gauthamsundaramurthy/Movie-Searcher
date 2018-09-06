@@ -6,7 +6,7 @@
 
 /* For mobile apps */ 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 700px) {
   .dashboard-container {
     width: 100vw;
     height: 100vh;
