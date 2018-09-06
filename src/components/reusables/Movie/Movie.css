@@ -22,7 +22,6 @@
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color: #a6a6a6;
 } 
 .title-container > .movie-name {
   width: 100%;
@@ -45,23 +44,4 @@
 
 .info-container:last-of-type {
   border:none;
-}
-
-.info-container > .keyword {
-  height: 22px;
-  flex: 0 0 30%;
-  font-family: muli-regular;
-  font-size: 14px;
-  color: #24233A;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.info-container > .value {
-  height: 22px;
-  flex: 0 0 63%;
-  font-family: muli-regular;
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

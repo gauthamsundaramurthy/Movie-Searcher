@@ -16,7 +16,7 @@ export class Movie extends React.Component {
         <MovieInfo keyword='Year' value={this.props.movieInfo.title_year} />
         <MovieInfo keyword='Language' value={this.props.movieInfo.language} />
         <MovieInfo keyword='Country' value={this.props.movieInfo.country} />
-        <MovieInfo keyword='Imdb link' value={this.props.movieInfo.movie_imdb_link} />
+        <MovieInfo keyword='ImdbLink' value={this.props.movieInfo.movie_imdb_link} />
       </div>
     )
   }

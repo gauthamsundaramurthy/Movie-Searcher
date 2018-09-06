@@ -102,12 +102,21 @@ class Movies extends React.Component {
 
   render () {
     let showMovies = this.state.showMovies.length <= 0 ? <div className='no-movies'> No movies to show</div> : this.state.showMovies.map((movie,index) => <Movie key={index} movieInfo={movie} />)
+    let placeholderText
+    switch (this.props.category) {
+      case 'Name': placeholderText = 'Search movies by name'; break
+      case 'Year': placeholderText = 'Search movies by year'; break
+      case 'Rating': placeholderText = 'Search movies by rating'; break
+      case 'Language': placeholderText = 'Search movies by language'; break
+      case 'Country': placeholderText = 'Search movies by country'; break
+      default: placeholderText = 'Search movies'
+    }
     return (
       /* Display area */
       <div className='display-container'>
         <div className='search-area'>
           <img src={searchIcon} className='search-icon' alt='search-icon' />
-          <input type='text' className='search-input' placeholder='Search movies..' onChange={this.userInput} />
+          <input type='text' className='search-input' placeholder={placeholderText} onChange={this.userInput} />
         </div>
         <div className='movies-container'>
           {showMovies}
