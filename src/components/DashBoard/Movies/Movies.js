@@ -4,6 +4,8 @@ import searchIcon from '../../../assets/images/search.png'
 import {Movie} from '../../reusables/Movie/Movie'
 import * as config from '../../../endPoints/EndPoints'
 import fetch from 'cross-fetch'
+import spinner from '../../../assets/images/spinner.gif'
+import {Scrollbars} from 'react-custom-scrollbars'
 
 class Movies extends React.Component {
   constructor () {
@@ -11,7 +13,8 @@ class Movies extends React.Component {
     this.state = {
       userInput: '',
       showMovies: [],
-      moviesList: []
+      moviesList: [],
+      isFetching: true
     }
     this.userInput = this.userInput.bind(this)
   }
@@ -25,7 +28,7 @@ class Movies extends React.Component {
       }
     })
       .then(response => response.json())
-      .then(movieList => this.setState({showMovies: movieList, moviesList: movieList}))
+      .then(movieList => this.setState({showMovies: movieList, moviesList: movieList, isFetching: false}))
   }
 
   userInput (e) {
@@ -34,8 +37,8 @@ class Movies extends React.Component {
       userInput: e.target.value
     })
     let userInput = e.target.value
-    let showMovies=[]
-    
+    let showMovies = []
+
     /* Initially category set to 'All' which loads entire movie list */
     /* Once user clicks category, based on the category movies are been displayed */
     if (this.props.category === 'All') {
@@ -101,7 +104,8 @@ class Movies extends React.Component {
   }
 
   render () {
-    let showMovies = this.state.showMovies.length <= 0 ? <div className='no-movies'> No movies to show</div> : this.state.showMovies.map((movie,index) => <Movie key={index} movieInfo={movie} />)
+    let loader = <img src={spinner} alt='spinner' className='spinner' />
+    let showMovies = this.state.showMovies.length <= 0 ? <div className='no-movies'> No movies to show</div> : this.state.showMovies.map((movie, index) => <Movie key={index} movieInfo={movie} />)
     let placeholderText
     switch (this.props.category) {
       case 'Name': placeholderText = 'Search movies by name'; break
@@ -118,7 +122,7 @@ class Movies extends React.Component {
           <input type='text' className='search-input' placeholder={placeholderText} onChange={this.userInput} />
         </div>
         <div className='movies-container'>
-          {showMovies}
+          {this.state.isFetching ? loader : showMovies}
         </div>
       </div>
     )

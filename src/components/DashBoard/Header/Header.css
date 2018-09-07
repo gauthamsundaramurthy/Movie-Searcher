@@ -31,6 +31,7 @@
   font-family: 'muli-semi-bold';
   font-size: 15px;
   color: #24233A;
+  cursor: pointer;
 }
 
 /* Hide mobile-app header in Desktop view */
