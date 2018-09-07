@@ -72,21 +72,21 @@
   font-size: 14px;
   letter-spacing: 0.2px;
   color: #24233A; 
+  cursor: pointer;
 }
 
-.category:hover {
+.sidepanel-container .category:hover {
   background-color: #F5F5F7;
 }
 
-.active {
-  background-color: #14C5DF;
-  color: #E2E2E2;
+.sidepanel-container .active {
+  background-color: #14C5DF !important;
+  color: #FFFFFF;
 }
 
 .hide {
   display: none;
 }
-
 
 /* Hide side panel for mobile apps */
 

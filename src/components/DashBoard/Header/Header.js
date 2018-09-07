@@ -7,7 +7,7 @@ class Header extends React.Component {
   constructor () {
     super()
     this.state = {
-      categoryList: ['All', 'Name', 'Year', 'Rating', 'Language', 'Country']
+      categoryList: ['Name', 'Year', 'Rating', 'Language', 'Country']
     }
     this.updateCurrentCategory = this.updateCurrentCategory.bind(this)
   }

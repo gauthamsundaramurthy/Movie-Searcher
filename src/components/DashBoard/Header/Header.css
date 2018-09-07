@@ -12,8 +12,9 @@
   font-family: 'muli-bold';
   font-size: 24px;
   letter-spacing: 0.2px;
-  margin: 15px 0px 15px 0px;
-  color: #24233A;
+  padding: 15px 0px 15px 0px;
+  color: #FFFFFF;
+  background-color: #24233A;
 }
   
 .mobile-app-component > .header-container {
@@ -32,6 +33,11 @@
   font-size: 15px;
   color: #24233A;
   cursor: pointer;
+}
+
+.mobile-app-component .active {
+  background-color: #F5F5F7 !important;
+  color: #24233A !important;
 }
 
 /* Hide mobile-app header in Desktop view */

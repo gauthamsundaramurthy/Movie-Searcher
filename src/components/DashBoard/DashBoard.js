@@ -8,7 +8,7 @@ class DashBoard extends React.Component {
   constructor () {
     super()
     this.state = {
-      category: 'All'
+      category: 'Name'
     }
     this.setCategory = this.setCategory.bind(this)
   }

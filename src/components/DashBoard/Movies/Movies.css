@@ -96,3 +96,18 @@
   height: 300px;  
   object-fit: cover;
 }
+
+
+/* for mobile view */
+@media only screen and (max-width:700px) {
+
+  .display-container > .search-area {
+    width: 90%;
+    flex: 0 0 45px;
+    margin: 10px 0px 10px 0px;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #f2f2f2;
+    display:flex;
+  }
+
+}

@@ -9,7 +9,7 @@ class SidePanel extends React.Component {
     super()
     this.updateCurrentCategory = this.updateCurrentCategory.bind(this)
     this.state = {
-      categoryList: ['All', 'Name', 'Year', 'Rating', 'Language', 'Country']
+      categoryList: ['Name', 'Year', 'Rating', 'Language', 'Country']
     }
   }
   updateCurrentCategory (e) {

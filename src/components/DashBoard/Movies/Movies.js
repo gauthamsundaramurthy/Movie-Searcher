@@ -39,17 +39,10 @@ class Movies extends React.Component {
     let userInput = e.target.value
     let showMovies = []
 
-    /* Initially category set to 'All' which loads entire movie list */
-    /* Once user clicks category, based on the category movies are been displayed */
-    if (this.props.category === 'All') {
-      this.state.moviesList.map((movie) => {
-        showMovies.push(movie)
-        this.setState({
-          showMovies: showMovies
-        })
-        return showMovies
-      }
-      )
+    if (e.target.value.trim() === '') {
+      this.setState({
+        showMovies: this.state.moviesList
+      })
     } else if (this.props.category === 'Name') {
       this.state.moviesList.map((movie) => {
         if (movie.movie_title.trim().toLowerCase() === userInput.trim().toLowerCase()) {
