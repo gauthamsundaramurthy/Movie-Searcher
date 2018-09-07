@@ -5,8 +5,8 @@
   margin: 15px;
   border-radius: 3px;
   padding-bottom: 20px;
-  box-shadow: 2px 3px 8px 1px rgba(13,181,206,0.05);
-  background-color: rgb(255,255,255);
+  border:1px solid rgba(89,89,89,0.1);
+  box-shadow: 2px 2px 8px 1px rgba(99,99,99,0.05);
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,8 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  background-color: #F8F8F8;
+  margin-bottom: 10px;
 } 
 
 .title-container > .movie-name {
@@ -27,7 +29,7 @@
   text-align:center;
   font-family: muli-bold;
   font-size: 20px;
-  color: #24233A;   
+  color: #585858;   
   overflow: hidden;
   text-overflow: ellipsis;
 }

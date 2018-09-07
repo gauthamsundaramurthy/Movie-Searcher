@@ -112,7 +112,7 @@ class Movies extends React.Component {
       <div className='display-container'>
         <div className='search-area'>
           <img src={searchIcon} className='search-icon' alt='search-icon' />
-          <input type='text' className='search-input' placeholder={placeholderText} onChange={this.userInput} />
+          <input type='text' className='search-input' placeholder={placeholderText} onChange={this.userInput} autoFocus />
         </div>
         <div className='movies-container'>
           {this.state.isFetching ? loader : showMovies}

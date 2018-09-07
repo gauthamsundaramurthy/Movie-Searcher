@@ -4,7 +4,7 @@
   
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #f2f2f2;  
+  border-right: 3px solid #f8f8f8;  
 }
 
 /* user profile */
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom:2px solid #f2f2f2;
+  border-bottom:1px solid #f2f2f2;
 }
 
 .user-profile > .title {
@@ -76,12 +76,12 @@
 }
 
 .sidepanel-container .category:hover {
-  background-color: #F5F5F7;
+  background-color: #F8F8F8;
 }
 
 .sidepanel-container .active {
-  background-color: #14C5DF !important;
-  color: #FFFFFF;
+  background-color: #E8E8E8 !important;
+  color: #24233A;
 }
 
 .hide {
