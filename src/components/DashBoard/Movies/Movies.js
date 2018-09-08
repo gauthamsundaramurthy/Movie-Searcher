@@ -2,10 +2,8 @@ import React from 'react'
 import './Movies.css'
 import searchIcon from '../../../assets/images/search.png'
 import {Movie} from '../../reusables/Movie/Movie'
-import * as config from '../../../endPoints/EndPoints'
-import fetch from 'cross-fetch'
 import spinner from '../../../assets/images/spinner.gif'
-import {Scrollbars} from 'react-custom-scrollbars'
+import {moviesList} from '../../../assets/data/moviesList'
 
 class Movies extends React.Component {
   constructor () {
@@ -20,6 +18,7 @@ class Movies extends React.Component {
   }
 
   componentDidMount () {
+    /*
     fetch(config.moviesEndPoint, {
       mode: 'no-cors',
       headers: {
@@ -29,6 +28,12 @@ class Movies extends React.Component {
     })
       .then(response => response.json())
       .then(movieList => this.setState({showMovies: movieList, moviesList: movieList, isFetching: false}))
+    */
+    this.setState({
+      moviesList: moviesList,
+      showMovies: moviesList,
+      isFetching: false
+    })
   }
 
   userInput (e) {
