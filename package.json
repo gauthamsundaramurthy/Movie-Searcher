@@ -6,7 +6,6 @@
     "npm": "3.5.2",
     "node": "8.10.0"
   },
-  // "homepage": "https://gauthamsundaramurthy.github.io/Movie-Searcher/",
   "dependencies": {
     "cross-fetch": "^2.2.2",
     "gh-pages": "^1.2.0",
