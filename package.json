@@ -2,7 +2,11 @@
   "name": "movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gauthamsundaramurthy.github.io/Movie-Searcher/",
+  "engines": {
+    "npm": "3.5.2",
+    "node": "8.10.0"
+  },
+  // "homepage": "https://gauthamsundaramurthy.github.io/Movie-Searcher/",
   "dependencies": {
     "cross-fetch": "^2.2.2",
     "gh-pages": "^1.2.0",
