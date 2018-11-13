@@ -50,7 +50,7 @@ class Movies extends React.Component {
       })
     } else if (this.props.category === 'Name') {
       this.state.moviesList.map((movie) => {
-        if (movie.movie_title.trim().toLowerCase() === userInput.trim().toLowerCase()) {
+        if (movie.movie_title.trim().toLowerCase().search(userInput.trim().toLowerCase()) >=0 ) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
@@ -60,7 +60,7 @@ class Movies extends React.Component {
       })
     } else if (this.props.category === 'Country') {
       this.state.moviesList.map((movie) => {
-        if (movie.country.trim().toLowerCase() === userInput.trim().toLowerCase()) {
+        if (movie.country.trim().toLowerCase().search(userInput.trim().toLowerCase()) >=0 ) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
@@ -70,7 +70,7 @@ class Movies extends React.Component {
       })
     } else if (this.props.category === 'Language') {
       this.state.moviesList.map((movie) => {
-        if (movie.language.trim().toLowerCase() === userInput.trim().toLowerCase()) {
+        if (movie.language.trim().toLowerCase().search(userInput.trim().toLowerCase()) >=0 ) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
@@ -80,7 +80,7 @@ class Movies extends React.Component {
       })
     } else if (this.props.category === 'Year') {
       this.state.moviesList.map((movie) => {
-        if (movie.title_year.trim().toLowerCase() === userInput.trim().toLowerCase()) {
+        if (movie.title_year.trim().toLowerCase().search(userInput.trim().toLowerCase()) >=0 ) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
@@ -90,7 +90,7 @@ class Movies extends React.Component {
       })
     } else if (this.props.category === 'Rating') {
       this.state.moviesList.map((movie) => {
-        if (movie.content_rating.trim().toLowerCase() === userInput.trim().toLowerCase()) {
+        if (movie.content_rating.trim().toLowerCase().search(userInput.trim().toLowerCase()) >=0) {
           showMovies.push(movie)
           this.setState({
             showMovies: showMovies
